@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语四级41天零基础每日打卡表</title>
+    <style>
+        :root {
+            --bg: #f5f0eb;
+            --card-bg: #fffdf9;
+            --text: #3d3226;
+            --text-light: #6b5e4f;
+            --text-muted: #9b8d7e;
+            --phase1: #6b8fbf;
+            --phase1-light: #e8f0fa;
+            --phase1-bg: #f0f5fc;
+            --phase2: #d4896a;
+            --phase2-light: #fef0e8;
+            --phase2-bg: #fdf6f1;
+            --phase3: #5d9b7e;
+            --phase3-light: #e6f5ed;
+            --phase3-bg: #f2faf6;
+            --today-glow: #f0a040;
+            --today-bg: #fffaf2;
+            --complete: #5d9b7e;
+            --complete-bg: #edf8f2;
+            --danger: #c0392b;
+            --danger-light: #fdf0ee;
+            --border: #e5ddd4;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 6px 24px rgba(0, 0, 0, 0.10);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-sans: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+            --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image:
+                radial-gradient(ellipse at 20% 10%, rgba(180, 160, 140, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 90%, rgba(160, 150, 130, 0.06) 0%, transparent 60%);
+        }
+
+        /* ========== 顶部导航栏 ========== */
+        .app-header {
+            background: #fffdf9;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .app-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #3d3226;
+            white-space: nowrap;
+        }
+        .app-logo .icon {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, #e8c97a, #d4a84b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .date-picker-wrap {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #faf7f2;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 7px 12px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .date-picker-wrap:focus-within {
+            border-color: #c4a87c;
+            box-shadow: 0 0 0 3px rgba(200, 160, 100, 0.1);
+        }
+        .date-picker-wrap label {
+            color: var(--text-light);
+            font-weight: 500;
+            white-space: nowrap;
+            font-size: 0.85rem;
+        }
+        .date-picker-wrap input[type="date"] {
+            border: none;
+            background: transparent;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text);
+            outline: none;
+            cursor: pointer;
+            padding: 2px 0;
+        }
+        .btn {
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+            white-space: nowrap;
+            background: #fffdf9;
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn:hover {
+            background: #faf5ed;
+            border-color: #c4a87c;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-reset {
+            border-color: #e8d0d0;
+            color: #a0524a;
+            background: #fefaf9;
+        }
+        .btn-reset:hover {
+            background: #fdf0ee;
+            border-color: #d4a0a0;
+            color: #8b3a3a;
+        }
+        .btn:active {
+            transform: scale(0.97);
+            transition: 0.08s;
+        }
+
+        /* ========== 主容器 ========== */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 16px 40px;
+        }
+
+        /* ========== 统计面板 ========== */
+        .stats-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .stat-card {
+            background: #fffdf9;
+            border-radius: var(--radius);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+            font-weight: 500;
+        }
+        .stat-card.today-stat {
+            border-left: 3px solid var(--today-glow);
+        }
+        .stat-card.phase1-stat {
+            border-left: 3px solid var(--phase1);
+        }
+        .stat-card.phase2-stat {
+            border-left: 3px solid var(--phase2);
+        }
+        .stat-card.phase3-stat {
+            border-left: 3px solid var(--phase3);
+        }
+        .stat-card.total-stat {
+            border-left: 3px solid #4a4a4a;
+        }
+        .progress-bar-wrap {
+            background: #e8e2d8;
+            border-radius: 20px;
+            height: 8px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(90deg, #c4a87c, #d4b88c);
+        }
+
+        /* ========== 铁律横幅 ========== */
+        .iron-rules-banner {
+            background: linear-gradient(135deg, #fffbf5, #fef8ed);
+            border: 1px solid #e8d5b0;
+            border-radius: var(--radius);
+            padding: 14px 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            box-shadow: var(--shadow-sm);
+            flex-wrap: wrap;
+        }
+        .iron-rules-banner .icon-alert {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .iron-rules-banner .rules-content {
+            flex: 1;
+            min-width: 200px;
+        }
+        .iron-rules-banner .rules-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #8b6914;
+            margin-bottom: 4px;
+            letter-spacing: 0.02em;
+        }
+        .iron-rules-banner ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .iron-rules-banner ul li {
+            font-size: 0.82rem;
+            color: #6b5e3d;
+            padding: 2px 0;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .iron-rules-banner ul li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.7rem;
+        }
+
+        /* ========== 阶段标签切换 ========== */
+        .phase-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .phase-tab {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            transition: var(--transition);
+            background: #fffdf9;
+            color: var(--text-light);
+            box-shadow: var(--shadow-sm);
+            white-space: nowrap;
+        }
+        .phase-tab:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+        .phase-tab.active-tab-1 {
+            background: var(--phase1-bg);
+            border-color: var(--phase1);
+            color: #3d5d80;
+            box-shadow: 0 0 0 4px rgba(107, 143, 191, 0.08);
+        }
+        .phase-tab.active-tab-2 {
+            background: var(--phase2-bg);
+            border-color: var(--phase2);
+            color: #7a4a35;
+            box-shadow: 0 0 0 4px rgba(212, 137, 106, 0.08);
+        }
+        .phase-tab.active-tab-3 {
+            background: var(--phase3-bg);
+            border-color: var(--phase3);
+            color: #3d6652;
+            box-shadow: 0 0 0 4px rgba(93, 155, 126, 0.08);
+        }
+        .phase-tab .badge {
+            display: inline-block;
+            background: #e8e2d8;
+            color: #6b5e4f;
+            border-radius: 12px;
+            padding: 2px 10px;
+            font-size: 0.75rem;
+            margin-left: 6px;
+            font-weight: 500;
+        }
+
+        /* ========== 天数网格 ========== */
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+            gap: 10px;
+        }
+        @media (max-width: 768px) {
+            .days-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 8px;
+            }
+        }
+        @media (max-width: 480px) {
+            .days-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+            .app-header {
+                padding: 10px 12px;
+            }
+            .header-inner {
+                gap: 8px;
+            }
+            .app-logo {
+                font-size: 1rem;
+            }
+            .stats-panel {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .stat-card {
+                padding: 12px 10px;
+            }
+            .stat-value {
+                font-size: 1.5rem;
+            }
+            .phase-tab {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+        }
+
+        .day-card {
+            background: #fffdf9;
+            border-radius: var(--radius);
+            padding: 12px 14px;
+            cursor: pointer;
+            border: 2px solid var(--border);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-height: 70px;
+        }
+        .day-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            border-color: #c4b89e;
+        }
+        .day-card:active {
+            transform: scale(0.98);
+            transition: 0.08s;
+        }
+        .day-card.today-card {
+            border-color: var(--today-glow) !important;
+            background: var(--today-bg);
+            box-shadow: 0 0 0 6px rgba(240, 160, 64, 0.08), var(--shadow);
+            animation: todayPulse 3s ease-in-out infinite;
+        }
+        @keyframes todayPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 0 6px rgba(240, 160, 64, 0.08), var(--shadow);
+            }
+            50% {
+                box-shadow: 0 0 0 12px rgba(240, 160, 64, 0.03), var(--shadow-lg);
+            }
+        }
+        .day-card.all-done {
+            border-color: var(--complete) !important;
+            background: var(--complete-bg);
+        }
+        .day-card.all-done::after {
+            content: '✓';
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 1rem;
+            color: var(--complete);
+            font-weight: 700;
+            opacity: 0.7;
+        }
+        .day-number {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        .day-date {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .day-progress-dots {
+            display: flex;
+            gap: 3px;
+            margin-top: 4px;
+            flex-wrap: wrap;
+        }
+        .day-progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e0d8cc;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .day-progress-dot.dot-done {
+            background: var(--complete);
+            box-shadow: 0 0 4px rgba(93, 155, 126, 0.4);
+        }
+        .day-card .phase-indicator {
+            font-size: 0.65rem;
+            font-weight: 600;
+            opacity: 0.7;
+            letter-spacing: 0.03em;
+        }
+        .phase-indicator.p1 {
+            color: var(--phase1);
+        }
+        .phase-indicator.p2 {
+            color: var(--phase2);
+        }
+        .phase-indicator.p3 {
+            color: var(--phase3);
+        }
+
+        /* ========== 弹窗/详情面板 ========== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(30, 22, 14, 0.55);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.2s ease;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .modal-panel {
+            background: #fffdf9;
+            border-radius: var(--radius-lg);
+            padding: 24px 22px;
+            max-width: 520px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: slideUp 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: #f0ebe0;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #6b5e4f;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+        .modal-close:hover {
+            background: #e0d5c5;
+            color: #3d3226;
+        }
+        .modal-day-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            padding-right: 30px;
+        }
+        .modal-day-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 14px;
+            background: #faf7f2;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .task-item:hover {
+            background: #f5efe5;
+            border-color: #e0d5c0;
+        }
+        .task-item.done {
+            background: #edf8f2;
+            border-color: #c4e0d2;
+        }
+        .task-checkbox {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #c4b89e;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            margin-top: 1px;
+            font-size: 0.7rem;
+            color: transparent;
+        }
+        .task-item.done .task-checkbox {
+            background: var(--complete);
+            border-color: var(--complete);
+            color: #fff;
+        }
+        .task-text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .task-item.done .task-text {
+            text-decoration: line-through;
+            opacity: 0.6;
+            text-decoration-color: #9bceb0;
+            text-decoration-thickness: 2px;
+        }
+        .task-tag {
+            font-size: 0.7rem;
+            background: #e8e2d8;
+            color: #6b5e4f;
+            border-radius: 10px;
+            padding: 3px 8px;
+            white-space: nowrap;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+        .special-task-highlight {
+            background: #fffef8;
+            border-left: 3px solid #e8c97a;
+            padding-left: 11px;
+        }
+        .modal-actions {
+            margin-top: 16px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .btn-done-all {
+            background: #edf8f2;
+            border-color: #c4e0d2;
+            color: #3d6652;
+        }
+        .btn-done-all:hover {
+            background: #daf0e4;
+        }
+        .btn-undo-all {
+            background: #fefaf9;
+            border-color: #e8d0d0;
+            color: #a0524a;
+        }
+        .btn-undo-all:hover {
+            background: #fdf0ee;
+        }
+
+        /* ========== Toast ========== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3d3226;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 300;
+            pointer-events: none;
+            animation: toastIn 0.35s ease, toastOut 0.35s ease 1.8s forwards;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes toastIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        @keyframes toastOut {
+            from {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-50%) translateY(15px);
+            }
+        }
+
+        /* ========== 响应式补充 ========== */
+        @media (max-width: 600px) {
+            .modal-panel {
+                padding: 18px 14px;
+                border-radius: var(--radius);
+                max-height: 90vh;
+            }
+            .task-item {
+                padding: 8px 10px;
+                gap: 8px;
+            }
+            .task-text {
+                font-size: 0.82rem;
+            }
+            .iron-rules-banner {
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .iron-rules-banner ul li {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d5cbc0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #beb0a0;
+        }
+
+        /* 打印样式 */
+        @media print {
+            .app-header,
+            .phase-tabs,
+            .modal-overlay,
+            .iron-rules-banner,
+            .btn,
+            .header-actions {
+                display: none !important;
+            }
+            .days-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 4px;
+            }
+            .day-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                break-inside: avoid;
+            }
+            body {
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== 顶部导航 ==================== -->
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="app-logo">
+                <span class="icon">🎓</span>
+                <span>四级41天打卡表</span>
+            </div>
+            <div class="header-actions">
+                <div class="date-picker-wrap">
+                    <label for="startDate">📅 起始日期：</label>
+                    <input type="date" id="startDate" title="设置计划的起始日期">
+                </div>
+                <button class="btn btn-reset" id="btnReset" title="清除所有打卡记录">🔄 重置打卡</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 主容器 ==================== -->
+    <div class="main-container" id="mainContainer">
+
+        <!-- 统计面板 -->
+        <div class="stats-panel" id="statsPanel">
+            <div class="stat-card today-stat">
+                <div class="stat-value" id="statToday">-</div>
+                <div class="stat-label">📌 今日完成率</div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" id="barToday" style="width:0%"></div></div>
+            </div>
+            <div class="stat-card phase1-stat">
+                <div class="stat-value" id="statPhase1">0/21</div>
+                <div class="stat-label">🔵 第一阶段·筑基期</div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" id="barPhase1" style="width:0%; background:linear-gradient(90deg,#7aa3d4,#6b8fbf);"></div></div>
+            </div>
+            <div class="stat-card phase2-stat">
+                <div class="stat-value" id="statPhase2">0/10</div>
+                <div class="stat-label">🟠 第二阶段·真题入门</div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" id="barPhase2" style="width:0%; background:linear-gradient(90deg,#e0a080,#d4896a);"></div></div>
+            </div>
+            <div class="stat-card phase3-stat">
+                <div class="stat-value" id="statPhase3">0/10</div>
+                <div class="stat-label">🟢 第三阶段·全真冲刺</div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" id="barPhase3" style="width:0%; background:linear-gradient(90deg,#7dbf9a,#5d9b7e);"></div></div>
+            </div>
+            <div class="stat-card total-stat">
+                <div class="stat-value" id="statTotal">0/41</div>
+                <div class="stat-label">📊 总完成天数</div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" id="barTotal" style="width:0%;"></div></div>
+            </div>
+        </div>
+
+        <!-- 铁律横幅 -->
+        <div class="iron-rules-banner">
+            <span class="icon-alert">⚠️</span>
+            <div class="rules-content">
+                <div class="rules-title">每日3条铁律（必须遵守）</div>
+                <ul>
+                    <li><strong>单词不中断</strong> — 哪怕当天只完成一半，也不能空卡</li>
+                    <li><strong>错题当天清</strong> — 不堆积到第二天</li>
+                    <li><strong>模考严格限时</strong> — 不翻书、不查词，模拟真实考场</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 阶段标签切换 -->
+        <div class="phase-tabs" id="phaseTabs">
+            <button class="phase-tab active-tab-1" data-phase="1">🔵 第一阶段：基础筑基期<span class="badge">第1–21天</span></button>
+            <button class="phase-tab" data-phase="2">🟠 第二阶段：真题入门期<span class="badge">第22–31天</span></button>
+            <button class="phase-tab" data-phase="3">🟢 第三阶段：全真冲刺期<span class="badge">第32–41天</span></button>
+            <button class="phase-tab" data-phase="all">📋 全部显示</button>
+        </div>
+
+        <!-- 天数网格 -->
+        <div class="days-grid" id="daysGrid"></div>
+
+    </div>
+
+    <!-- ==================== 详情弹窗 ==================== -->
+    <div class="modal-overlay" id="modalOverlay" style="display:none;">
+        <div class="modal-panel" id="modalPanel">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-day-title" id="modalTitle"></div>
+            <div class="modal-day-subtitle" id="modalSubtitle"></div>
+            <ul class="task-list" id="modalTaskList"></ul>
+            <div class="modal-actions">
+                <button class="btn btn-done-all" id="btnDoneAll">✅ 全部完成</button>
+                <button class="btn btn-undo-all" id="btnUndoAll">↩️ 全部取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast容器 -->
+    <div id="toastContainer"></div>
+
+    <script>
+        (function() {
+            // ==================== 常量与数据定义 ====================
+            const TOTAL_DAYS = 41;
+            const DEFAULT_START_DATE = '2026-05-04'; // 默认起始日期
+            const STORAGE_KEY_DATA = 'cet4_checkin_data_v2';
+            const STORAGE_KEY_START = 'cet4_start_date';
+
+            // 第一阶段（第1-21天）语法打卡清单
+            const phase1GrammarList = [
+                '主谓宾/主系表基础结构',
+                '一般现在时',
+                '一般过去时',
+                '一般将来时',
+                '现在进行时',
+                '现在完成时',
+                '五大时态综合复盘+造句练习',
+                '简单句与复合句区别',
+                '定语从句that基础用法',
+                '定语从句which/who用法',
+                '定语从句综合练习',
+                '状语从句if条件句',
+                '状语从句when时间句',
+                '状语从句because原因句',
+                'to do非谓语基础',
+                'doing非谓语基础',
+                'done非谓语基础',
+                '非谓语简单句仿写',
+                '基础语法错题复盘',
+                '简单句→复合句改写练习',
+                '筑基期全语法复盘+自查'
+            ];
+
+            // 第二阶段（第22-31天）每日专项刷题打卡
+            const phase2SpecialTasks = [
+                '仔细阅读1篇（限时）+订正',
+                '仔细阅读2篇（限时）+错题复盘',
+                '长篇阅读匹配1篇+找定位技巧',
+                '长篇阅读匹配2篇+同义替换积累',
+                '听力长对话1套+抓关键词',
+                '听力篇章1套+跟读原文',
+                '作文：背开头结尾模板+仿写1段',
+                '作文：背中间论证句型+仿写全文',
+                '翻译：背中国文化高频词+翻译短句',
+                '翻译：背连接词+完整段落仿写'
+            ];
+
+            // 第三阶段（第32-41天）每日模考&背诵打卡
+            const phase3SpecialTasks = [
+                '整套真题限时模考（严格按考试时间）+逐题订正',
+                '复盘32天错题+作文模板全文背诵',
+                '整套真题限时模考+翻译句型默写',
+                '复盘34天错题+听力高频词整理',
+                '整套真题限时模考+阅读技巧回看',
+                '复盘36天错题+作文仿写1篇',
+                '整套真题限时模考+翻译仿写1篇',
+                '全题型错题本复盘+核心词总复习',
+                '作文+翻译模板默写+听力磨耳朵',
+                '轻量复习（只看错题+核心词）+调整心态'
+            ];
+
+            // 获取某一天所属的阶段
+            function getPhase(dayNum) {
+                if (dayNum >= 1 && dayNum <= 21) return 1;
+                if (dayNum >= 22 && dayNum <= 31) return 2;
+                if (dayNum >= 32 && dayNum <= 41) return 3;
+                return null;
+            }
+
+            // 获取某一天的通用任务列表（不含特殊打卡项）
+            function getGeneralTasks(dayNum) {
+                const phase = getPhase(dayNum);
+                if (phase === 1) {
+                    return [
+                        { text: '【不背单词APP】新词80个', tag: '1h', emoji: '📚' },
+                        { text: '【不背单词APP】复习前1–3天旧词+生词本', tag: '1h', emoji: '🔄' },
+                        { text: '语法学习（按阶段模块）+5道基础语法小题', tag: '1.5h', emoji: '📝' },
+                        { text: '听力短句跟读+1个写翻万能句型背诵', tag: '0.5h', emoji: '🎧' },
+                    ];
+                } else if (phase === 2) {
+                    return [
+                        { text: '【不背单词APP】新词80个+真题生词加入生词本', tag: '1h', emoji: '📚' },
+                        { text: '【不背单词APP】复习旧词+生词本', tag: '1h', emoji: '🔄' },
+                        { text: '真题长难句拆解3句', tag: '1.5h', emoji: '📝' },
+                        { text: '分题型刷题+1个写翻模板背诵', tag: '0.5h', emoji: '✍️' },
+                    ];
+                } else { // phase 3
+                    return [
+                        { text: '【不背单词APP】只背生词本高频遗忘词', tag: '2h', emoji: '📚' },
+                        { text: '真题错题复盘+长难句回看', tag: '1.5h', emoji: '🔍' },
+                        { text: '模考/模板背诵', tag: '0.5h', emoji: '📋' },
+                    ];
+                }
+            }
+
+            // 获取某一天的特殊打卡项
+            function getSpecialTask(dayNum) {
+                const phase = getPhase(dayNum);
+                if (phase === 1) {
+                    const idx = dayNum - 1; // 0-based
+                    return {
+                        text: '📌 语法打卡：' + phase1GrammarList[idx],
+                        tag: '语法主题',
+                        emoji: '⭐',
+                        isSpecial: true
+                    };
+                } else if (phase === 2) {
+                    const idx = dayNum - 22;
+                    return {
+                        text: '📌 专项刷题：' + phase2SpecialTasks[idx],
+                        tag: '每日专项',
+                        emoji: '🎯',
+                        isSpecial: true
+                    };
+                } else {
+                    const idx = dayNum - 32;
+                    return {
+                        text: '📌 ' + phase3SpecialTasks[idx],
+                        tag: '模考/背诵',
+                        emoji: '🏁',
+                        isSpecial: true
+                    };
+                }
+            }
+
+            // 获取某一天所有任务（通用+特殊）
+            function getAllTasksForDay(dayNum) {
+                const general = getGeneralTasks(dayNum);
+                const special = getSpecialTask(dayNum);
+                return [...general, special];
+            }
+
+            // ==================== 数据持久化 ====================
+            function loadData() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY_DATA);
+                    if (raw) {
+                        return JSON.parse(raw);
+                    }
+                } catch (e) {
+                    console.warn('数据加载失败，使用默认空数据');
+                }
+                // 返回空数据结构：{ "day1": [false,...], "day2": [...], ... }
+                const empty = {};
+                for (let d = 1; d <= TOTAL_DAYS; d++) {
+                    const taskCount = getAllTasksForDay(d).length;
+                    empty['day' + d] = new Array(taskCount).fill(false);
+                }
+                return empty;
+            }
+
+            function saveData(data) {
+                try {
+                    localStorage.setItem(STORAGE_KEY_DATA, JSON.stringify(data));
+                } catch (e) {
+                    showToast('⚠️ 存储空间不足，请清理浏览器缓存');
+                }
+            }
+
+            function loadStartDate() {
+                const stored = localStorage.getItem(STORAGE_KEY_START);
+                if (stored && /^\d{4}-\d{2}-\d{2}$/.test(stored)) {
+                    return stored;
+                }
+                return DEFAULT_START_DATE;
+            }
+
+            function saveStartDate(dateStr) {
+                localStorage.setItem(STORAGE_KEY_START, dateStr);
+            }
+
+            // ==================== 全局状态 ====================
+            let checkinData = loadData();
+            let startDateStr = loadStartDate();
+            let currentPhaseFilter = 'all'; // '1' | '2' | '3' | 'all'
+            let openDayNum = null; // 当前打开弹窗的天数
+
+            // ==================== 辅助函数 ====================
+            function getDateForDay(dayNum) {
+                const start = new Date(startDateStr + 'T00:00:00');
+                const target = new Date(start);
+                target.setDate(start.getDate() + dayNum - 1);
+                return target;
+            }
+
+            function formatDate(date) {
+                const y = date.getFullYear();
+                const m = String(date.getMonth() + 1).padStart(2, '0');
+                const d = String(date.getDate()).padStart(2, '0');
+                const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+                const wd = weekdays[date.getDay()];
+                return `${y}-${m}-${d} ${wd}`;
+            }
+
+            function getTodayDayNum() {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const start = new Date(startDateStr + 'T00:00:00');
+                const diffMs = today.getTime() - start.getTime();
+                const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
+                if (diffDays < 1 || diffDays > TOTAL_DAYS) return null;
+                return diffDays;
+            }
+
+            function isAllTasksDone(dayNum) {
+                const tasks = checkinData['day' + dayNum];
+                if (!tasks || tasks.length === 0) return false;
+                return tasks.every(t => t === true);
+            }
+
+            function getDoneCount(dayNum) {
+                const tasks = checkinData['day' + dayNum];
+                if (!tasks) return 0;
+                return tasks.filter(t => t === true).length;
+            }
+
+            function getTotalTasks(dayNum) {
+                const tasks = checkinData['day' + dayNum];
+                return tasks ? tasks.length : 0;
+            }
+
+            // ==================== Toast ====================
+            function showToast(msg) {
+                const container = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.textContent = msg;
+                container.appendChild(toast);
+                setTimeout(() => {
+                    if (toast.parentNode) toast.parentNode.removeChild(toast);
+                }, 2200);
+            }
+
+            // ==================== 渲染函数 ====================
+            function renderStats() {
+                const todayNum = getTodayDayNum();
+                // 今日完成率
+                if (todayNum && checkinData['day' + todayNum]) {
+                    const done = getDoneCount(todayNum);
+                    const total = getTotalTasks(todayNum);
+                    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+                    document.getElementById('statToday').textContent = pct + '%';
+                    document.getElementById('barToday').style.width = pct + '%';
+                } else {
+                    document.getElementById('statToday').textContent = '—';
+                    document.getElementById('barToday').style.width = '0%';
+                }
+
+                // 各阶段统计
+                const phases = [
+                    { id: 1, range: [1, 21], statEl: 'statPhase1', barEl: 'barPhase1' },
+                    { id: 2, range: [22, 31], statEl: 'statPhase2', barEl: 'barPhase2' },
+                    { id: 3, range: [32, 41], statEl: 'statPhase3', barEl: 'barPhase3' },
+                ];
+                let totalDoneDays = 0;
+                phases.forEach(p => {
+                    let doneDays = 0;
+                    const totalDaysInPhase = p.range[1] - p.range[0] + 1;
+                    for (let d = p.range[0]; d <= p.range[1]; d++) {
+                        if (isAllTasksDone(d)) doneDays++;
+                    }
+                    totalDoneDays += doneDays;
+                    document.getElementById(p.statEl).textContent = doneDays + '/' + totalDaysInPhase;
+                    const pct = totalDaysInPhase > 0 ? Math.round((doneDays / totalDaysInPhase) * 100) : 0;
+                    document.getElementById(p.barEl).style.width = pct + '%';
+                });
+                document.getElementById('statTotal').textContent = totalDoneDays + '/41';
+                document.getElementById('barTotal').style.width = Math.round((totalDoneDays / 41) * 100) + '%';
+            }
+
+            function renderDaysGrid() {
+                const grid = document.getElementById('daysGrid');
+                const todayNum = getTodayDayNum();
+                grid.innerHTML = '';
+
+                for (let d = 1; d <= TOTAL_DAYS; d++) {
+                    const phase = getPhase(d);
+                    // 阶段筛选
+                    if (currentPhaseFilter !== 'all' && String(phase) !== currentPhaseFilter) {
+                        continue;
+                    }
+
+                    const date = getDateForDay(d);
+                    const allDone = isAllTasksDone(d);
+                    const doneCount = getDoneCount(d);
+                    const totalCount = getTotalTasks(d);
+                    const isToday = (d === todayNum);
+
+                    const card = document.createElement('div');
+                    card.className = 'day-card';
+                    if (isToday) card.classList.add('today-card');
+                    if (allDone) card.classList.add('all-done');
+                    card.setAttribute('data-day', d);
+                    card.addEventListener('click', () => openDayDetail(d));
+
+                    let phaseLabel = '';
+                    let phaseClass = '';
+                    if (phase === 1) { phaseLabel = '筑基期';
+                        phaseClass = 'p1'; } else if (phase === 2) { phaseLabel = '真题入门';
+                        phaseClass = 'p2'; } else { phaseLabel = '全真冲刺';
+                        phaseClass = 'p3'; }
+
+                    // 进度圆点
+                    let dotsHTML = '';
+                    for (let t = 0; t < totalCount; t++) {
+                        const isDone = checkinData['day' + d] && checkinData['day' + d][t];
+                        dotsHTML +=
+                            `<span class="day-progress-dot${isDone ? ' dot-done' : ''}" title="任务${t+1}: ${isDone ? '已完成' : '未完成'}"></span>`;
+                    }
+
+                    card.innerHTML = `
+                <span class="phase-indicator ${phaseClass}">${phaseLabel}</span>
+                <span class="day-number">第${d}天</span>
+                <span class="day-date">${formatDate(date)}</span>
+                <div class="day-progress-dots">${dotsHTML}</div>
+                <span style="font-size:0.7rem;color:var(--text-muted);margin-top:2px;">${doneCount}/${totalCount} 完成</span>
+              `;
+
+                    if (isToday) {
+                        const todayBadge = document.createElement('span');
+                        todayBadge.style.cssText =
+                            'position:absolute;top:6px;right:10px;font-size:0.65rem;background:#f0a040;color:#fff;border-radius:10px;padding:2px 8px;font-weight:700;letter-spacing:0.03em;';
+                        todayBadge.textContent = '今天';
+                        card.appendChild(todayBadge);
+                    }
+
+                    grid.appendChild(card);
+                }
+
+                // 如果筛选后无结果
+                if (grid.children.length === 0) {
+                    grid.innerHTML =
+                        '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-muted);">该阶段暂无数据</div>';
+                }
+            }
+
+            function openDayDetail(dayNum) {
+                openDayNum = dayNum;
+                const date = getDateForDay(dayNum);
+                const phase = getPhase(dayNum);
+                const allDone = isAllTasksDone(dayNum);
+                const tasks = getAllTasksForDay(dayNum);
+                const taskStates = checkinData['day' + dayNum] || new Array(tasks.length).fill(false);
+
+                let phaseName = '';
+                if (phase === 1) phaseName = '第一阶段：基础筑基期';
+                else if (phase === 2) phaseName = '第二阶段：真题入门期';
+                else phaseName = '第三阶段：全真冲刺期';
+
+                document.getElementById('modalTitle').textContent = `第${dayNum}天 任务详情`;
+                document.getElementById('modalSubtitle').textContent =
+                    `${formatDate(date)} | ${phaseName} | 共${tasks.length}项任务`;
+
+                const taskListEl = document.getElementById('modalTaskList');
+                taskListEl.innerHTML = '';
+
+                tasks.forEach((task, index) => {
+                    const isDone = taskStates[index] === true;
+                    const li = document.createElement('li');
+                    li.className = 'task-item' + (isDone ? ' done' : '') + (task.isSpecial ?
+                        ' special-task-highlight' : '');
+                    li.setAttribute('data-task-index', index);
+                    li.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        toggleTask(dayNum, index);
+                    });
+
+                    li.innerHTML = `
+                <span class="task-checkbox">${isDone ? '✓' : ''}</span>
+                <span class="task-text">${task.emoji || ''} ${task.text}</span>
+                <span class="task-tag">${task.tag || ''}</span>
+              `;
+                    taskListEl.appendChild(li);
+                });
+
+                // 更新全部完成/取消按钮
+                document.getElementById('btnDoneAll').onclick = () => setAllTasks(dayNum, true);
+                document.getElementById('btnUndoAll').onclick = () => setAllTasks(dayNum, false);
+
+                document.getElementById('modalOverlay').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                document.getElementById('modalOverlay').style.display = 'none';
+                document.body.style.overflow = '';
+                openDayNum = null;
+                refreshAll();
+            }
+
+            function toggleTask(dayNum, taskIndex) {
+                const key = 'day' + dayNum;
+                if (!checkinData[key]) {
+                    checkinData[key] = new Array(getAllTasksForDay(dayNum).length).fill(false);
+                }
+                checkinData[key][taskIndex] = !checkinData[key][taskIndex];
+                saveData(checkinData);
+
+                // 更新弹窗中的任务项样式
+                if (openDayNum === dayNum) {
+                    const taskItems = document.querySelectorAll('#modalTaskList .task-item');
+                    if (taskItems[taskIndex]) {
+                        const isDone = checkinData[key][taskIndex];
+                        taskItems[taskIndex].classList.toggle('done', isDone);
+                        const checkbox = taskItems[taskIndex].querySelector('.task-checkbox');
+                        if (checkbox) checkbox.textContent = isDone ? '✓' : '';
+                    }
+                }
+
+                // 检查是否全部完成
+                if (isAllTasksDone(dayNum)) {
+                    showToast('🎉 第' + dayNum + '天全部完成！太棒了！');
+                }
+
+                refreshAll();
+            }
+
+            function setAllTasks(dayNum, value) {
+                const key = 'day' + dayNum;
+                const taskCount = getAllTasksForDay(dayNum).length;
+                checkinData[key] = new Array(taskCount).fill(value);
+                saveData(checkinData);
+
+                if (openDayNum === dayNum) {
+                    // 刷新弹窗
+                    openDayDetail(dayNum);
+                }
+                if (value && isAllTasksDone(dayNum)) {
+                    showToast('🎉 第' + dayNum + '天全部完成！');
+                }
+                refreshAll();
+            }
+
+            function refreshAll() {
+                renderStats();
+                renderDaysGrid();
+                updatePhaseTabStyles();
+            }
+
+            function updatePhaseTabStyles() {
+                const tabs = document.querySelectorAll('.phase-tab');
+                tabs.forEach(tab => {
+                    const phase = tab.getAttribute('data-phase');
+                    tab.classList.remove('active-tab-1', 'active-tab-2', 'active-tab-3');
+                    if (phase === currentPhaseFilter) {
+                        if (phase === '1') tab.classList.add('active-tab-1');
+                        else if (phase === '2') tab.classList.add('active-tab-2');
+                        else if (phase === '3') tab.classList.add('active-tab-3');
+                        else {
+                            // 'all' - 使用中性样式
+                            tab.style.background = '#faf7f2';
+                            tab.style.borderColor = '#6b5e4f';
+                            tab.style.color = '#3d3226';
+                            tab.style.boxShadow = '0 0 0 4px rgba(100,90,70,0.06)';
+                        }
+                    } else {
+                        tab.style.background = '';
+                        tab.style.borderColor = 'transparent';
+                        tab.style.color = '';
+                        tab.style.boxShadow = '';
+                    }
+                });
+            }
+
+            // ==================== 事件处理 ====================
+            function setupEventListeners() {
+                // 起始日期变更
+                const dateInput = document.getElementById('startDate');
+                dateInput.value = startDateStr;
+                dateInput.addEventListener('change', function() {
+                    const newDate = this.value;
+                    if (newDate && /^\d{4}-\d{2}-\d{2}$/.test(newDate)) {
+                        startDateStr = newDate;
+                        saveStartDate(newDate);
+                        showToast('✅ 起始日期已更新为 ' + newDate);
+                        refreshAll();
+                    }
+                });
+
+                // 阶段标签切换
+                document.getElementById('phaseTabs').addEventListener('click', function(e) {
+                    const tab = e.target.closest('.phase-tab');
+                    if (!tab) return;
+                    const phase = tab.getAttribute('data-phase');
+                    currentPhaseFilter = phase;
+                    updatePhaseTabStyles();
+                    renderDaysGrid();
+                    // 滚动到网格顶部
+                    document.getElementById('daysGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+
+                // 弹窗关闭
+                document.getElementById('modalClose').addEventListener('click', closeModal);
+                document.getElementById('modalOverlay').addEventListener('click', function(e) {
+                    if (e.target === this) closeModal();
+                });
+
+                // ESC关闭弹窗
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && openDayNum !== null) {
+                        closeModal();
+                    }
+                });
+
+                // 重置按钮
+                document.getElementById('btnReset').addEventListener('click', function() {
+                    if (confirm(
+                            '⚠️ 确定要清除所有41天的打卡记录吗？\n\n此操作不可恢复！建议先截图保存当前进度。\n\n点击「确定」继续重置，点击「取消」保留数据。'
+                            )) {
+                        const empty = {};
+                        for (let d = 1; d <= TOTAL_DAYS; d++) {
+                            const taskCount = getAllTasksForDay(d).length;
+                            empty['day' + d] = new Array(taskCount).fill(false);
+                        }
+                        checkinData = empty;
+                        saveData(checkinData);
+                        // 也重置起始日期
+                        startDateStr = DEFAULT_START_DATE;
+                        saveStartDate(DEFAULT_START_DATE);
+                        document.getElementById('startDate').value = DEFAULT_START_DATE;
+                        currentPhaseFilter = 'all';
+                        updatePhaseTabStyles();
+                        closeModal();
+                        refreshAll();
+                        showToast('🔄 所有打卡记录已重置');
+                    }
+                });
+
+                // 弹窗内全部完成/取消按钮
+                document.getElementById('btnDoneAll').addEventListener('click', function() {
+                    if (openDayNum) setAllTasks(openDayNum, true);
+                });
+                document.getElementById('btnUndoAll').addEventListener('click', function() {
+                    if (openDayNum) setAllTasks(openDayNum, false);
+                });
+            }
+
+            // ==================== 初始化 ====================
+            function init() {
+                // 确保数据结构完整（兼容旧版本数据）
+                let needsSave = false;
+                for (let d = 1; d <= TOTAL_DAYS; d++) {
+                    const key = 'day' + d;
+                    const expectedLen = getAllTasksForDay(d).length;
+                    if (!checkinData[key] || checkinData[key].length !== expectedLen) {
+                        checkinData[key] = new Array(expectedLen).fill(false);
+                        needsSave = true;
+                    }
+                }
+                if (needsSave) {
+                    saveData(checkinData);
+                }
+
+                setupEventListeners();
+                updatePhaseTabStyles();
+                refreshAll();
+
+                // 初始显示全部
+                document.querySelector('.phase-tab[data-phase="all"]').style.background = '#faf7f2';
+                document.querySelector('.phase-tab[data-phase="all"]').style.borderColor = '#6b5e4f';
+                document.querySelector('.phase-tab[data-phase="all"]').style.color = '#3d3226';
+                document.querySelector('.phase-tab[data-phase="all"]').style.boxShadow =
+                    '0 0 0 4px rgba(100,90,70,0.06)';
+
+                console.log('✅ 英语四级41天打卡表已就绪');
+                console.log('📅 起始日期：' + startDateStr);
+                const today = getTodayDayNum();
+                if (today) {
+                    console.log('📍 今天是第' + today + '天');
+                } else {
+                    console.log('📍 当前日期不在41天计划范围内');
+                }
+                console.log('💾 数据存储在 localStorage: ' + STORAGE_KEY_DATA);
+                console.log('🖱️ 点击任意天数卡片查看详细任务并打卡');
+            }
+
+            // 启动应用
+            init();
+        })();
+    </script>
+</body>
+</html>
